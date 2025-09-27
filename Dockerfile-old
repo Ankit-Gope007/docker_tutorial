@@ -1,0 +1,44 @@
+# Lay the initial block and bring the node from the docker hub.
+FROM node:22-alpine
+
+
+# This is my working directory or the root of the project , whatever happens i want it to be in this directory.
+WORKDIR /app
+
+# Copy this file and put it into my current directort ./ (which is /app or my working directory ) .
+# The * after package is a regex and it suggests that whatever file starts with package and emds ith .json bring it , it will include package-lock.json too.
+COPY package*.json ./ 
+
+# RUN command executes the command at build time .
+# CMD command executes the commads at container run time.
+
+
+# Okay , so now , i want to run the command npm install at build time so.
+RUN npm install
+
+
+# Now what you need to do is copy all the folders/files on the current directory and transfer then into my current working directory ( the first . is the current files and folder directory , whereas the second . is my current working directory that is /app)
+COPY . .
+
+# So I want to make this app available onto a particular port so i will expose it.
+EXPOSE 5173
+
+# Now i have done everything but run the app like "npm run dev" so to run this i have to use CMD to run it at container run time.
+CMD ["npm","run","dev"]
+
+# Now to build in cli we have to run this command "docker build -t vite-test ." The "docker build" , builds the image and then "-t vite-test" gives it a name and "." is the instruction like on which directory , for now its on the current directory so i leave it as ".".
+
+# Now to start the app like run the container , we have to give this command 
+# "docker run -p 5173:5173 vite-test".
+# Breaking it down one by one 
+# docker run - you know already.
+# -p - Port mapping , 5173:5173 - it means  map the port 5173(second one,  of the container of the port 5173 ) onto 5173(firstone,  in my pc on the port 5173)
+# vite-test -name of the container you want to run.
+
+
+# Now it wont run cause you have to change the vite.config.js , and add 
+# server:{
+#     host: "0.0.0.0",
+#     port:5173,
+#   },
+# which allows all the ports to run.
