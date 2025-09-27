@@ -1,16 +1,23 @@
-# React + Vite
+# 🚀 Docker Learning Journey
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I’ve been learning **Docker** step by step and here’s what I covered so far:
 
-Currently, two official plugins are available:
+### ✅ What I Learned
+- What Docker is, and why we use **images** and **containers**.
+- Basic commands like `docker pull`, `docker run`, `docker stop`, `docker ps`, `docker exec`.
+- Useful commands such as mounting volumes, viewing logs, copying files, pruning containers.
+- Multi-stage builds to create optimized production-ready images.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🛠️ Hands-On
+- Pulled and ran images like `hello-world` and `nginx`.
+- Created and ran a **simple Vite app** inside a container.
+- Practiced multi-stage builds with a Node.js app.
 
-## React Compiler
+### 🎯 Next Goals
+- Learn Docker Compose for multi-container setups.
+- Try dockerizing a full MERN app.
+- Explore Kubernetes basics.
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+👤 **Author**: Ankit Gope
